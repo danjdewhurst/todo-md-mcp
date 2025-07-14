@@ -1,0 +1,60 @@
+{
+  "name": "@danjdewhurst/todo-md-mcp",
+  "version": "0.1.4",
+  "description": "MCP server for managing todos in markdown files",
+  "license": "MIT",
+  "author": "Dan",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/danjdewhurst/todo-md-mcp.git"
+  },
+  "homepage": "https://github.com/danjdewhurst/todo-md-mcp",
+  "bugs": {
+    "url": "https://github.com/danjdewhurst/todo-md-mcp/issues"
+  },
+  "type": "module",
+  "bin": {
+    "mcp-server-todo-md": "dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc && shx chmod +x dist/*.js",
+    "prepare": "husky",
+    "watch": "tsc --watch",
+    "dev": "npm run build && node dist/index.js",
+    "test": "vitest run",
+    "test:watch": "vitest --watch",
+    "lint": "eslint src --ext .ts",
+    "lint:fix": "eslint src --ext .ts --fix",
+    "format": "prettier --write src/**/*.ts",
+    "format:check": "prettier --check src/**/*.ts"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "0.5.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22",
+    "@typescript-eslint/eslint-plugin": "^7.0.0",
+    "@typescript-eslint/parser": "^7.0.0",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.1.3",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.1.2",
+    "prettier": "^3.2.5",
+    "shx": "^0.3.4",
+    "typescript": "^5.3.3",
+    "vitest": "^1.4.0"
+  },
+  "lint-staged": {
+    "src/**/*.{ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,md}": [
+      "prettier --write"
+    ]
+  }
+}
