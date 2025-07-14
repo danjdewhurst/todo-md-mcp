@@ -1,0 +1,59 @@
+{
+  "dxt_version": "0.1",
+  "name": "todo-md-mcp",
+  "display_name": "Todo Markdown MCP Server",
+  "version": "0.1.5",
+  "description": "MCP server for managing todos in markdown files",
+  "long_description": "A Model Context Protocol (MCP) server that provides todo list functionality backed by markdown files. Allows AI assistants to manage todo items in a standardized markdown format with persistent UUID tracking.",
+  "author": {
+    "name": "Daniel Dewhurst",
+    "url": "https://github.com/danjdewhurst"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/danjdewhurst/todo-md-mcp.git"
+  },
+  "homepage": "https://github.com/danjdewhurst/todo-md-mcp",
+  "documentation": "https://github.com/danjdewhurst/todo-md-mcp#readme",
+  "server": {
+    "type": "node",
+    "entry_point": "dist/index.js",
+    "mcp_config": {
+      "command": "node"
+    }
+  },
+  "tools": [
+    {
+      "name": "list_todos",
+      "description": "List all todos from the markdown file with statistics"
+    },
+    {
+      "name": "add_todo",
+      "description": "Add a new todo item to the markdown file"
+    },
+    {
+      "name": "update_todo",
+      "description": "Update an existing todo item (text or completion status)"
+    },
+    {
+      "name": "delete_todo",
+      "description": "Delete a specific todo item by ID"
+    },
+    {
+      "name": "clear_completed",
+      "description": "Remove all completed todo items"
+    }
+  ],
+  "compatibility": {
+    "platforms": ["darwin", "linux", "win32"],
+    "node_version": ">=18.0.0"
+  },
+  "user_config": {
+    "todo_file": {
+      "type": "string",
+      "title": "Todo File Path",
+      "description": "Path to the todo markdown file",
+      "default": "todo.md"
+    }
+  }
+}

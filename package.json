@@ -3,7 +3,7 @@
   "version": "0.1.5",
   "description": "MCP server for managing todos in markdown files",
   "license": "MIT",
-  "author": "Dan",
+  "author": "Daniel Dewhurst",
   "repository": {
     "type": "git",
     "url": "https://github.com/danjdewhurst/todo-md-mcp.git"
